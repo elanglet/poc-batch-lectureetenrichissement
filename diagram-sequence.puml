@@ -1,0 +1,23 @@
+@startuml
+actor "Batch Framework" as Batch
+participant "ChunkPrefetchingItemReader" as Reader
+participant "ApiChunkCacheService" as Cache
+participant "ApiClient" as Api
+participant "ApiEnrichmentProcessor" as EnrProc
+participant "BusinessProcessor" as BizProc
+participant "LoggingItemWriter" as Writer
+
+Batch -> Reader : read() -> fills buffer (chunkSize)
+Reader -> Cache : prepareForChunk(listOfItems)
+Cache -> Api : fetchDataFor(listOfItems)
+Api --> Cache : List<ApiData>
+Reader --> Batch : Item#1
+Batch -> EnrProc : process(Item#1)
+EnrProc -> Cache : enrichmentFor(Item#1)
+EnrProc --> Batch : EnrichedItem#1
+
+... repeat for each item in chunk ...
+
+Batch -> Writer : write(List<EnrichedItem>)
+Writer --> Batch : ok
+@enduml

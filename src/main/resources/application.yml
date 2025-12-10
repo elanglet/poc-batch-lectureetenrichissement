@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:batchdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  batch:
+    initialize-schema: always
+
+app:
+  chunk:
+    size: 5

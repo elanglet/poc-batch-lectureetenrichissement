@@ -1,0 +1,31 @@
+@startuml
+package model {
+  class Item { +long id; +String payload }
+  class ApiData { +String key; +String value }
+  class EnrichedItem { +long id; +String payload; +String enrichment }
+}
+package reader {
+  class SimpleItemReader
+  class ChunkPrefetchingItemReader
+}
+package api {
+  interface ApiClient
+  class MockApiClient
+}
+package service {
+  class ApiChunkCacheService
+}
+package processor {
+  class ApiEnrichmentProcessor
+  class BusinessProcessor
+}
+package writer {
+  class LoggingItemWriter
+}
+SimpleItemReader --> Item
+ChunkPrefetchingItemReader --> SimpleItemReader
+ApiChunkCacheService --> ApiClient
+ApiEnrichmentProcessor --> ApiChunkCacheService
+BusinessProcessor --> EnrichedItem
+LoggingItemWriter --> EnrichedItem
+@enduml
