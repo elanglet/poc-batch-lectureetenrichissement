@@ -111,8 +111,8 @@ public class EnrichissementService {
      */
     public void viderCache() {
         chunkCache.remove();
-        siretsLus.remove();  // ← Libère complètement le ThreadLocal
-        nombreDeSirets.remove();  // ← Libère complètement le ThreadLocal
+        siretsLus.remove();
+        nombreDeSirets.remove();
         logger.debug("Cache des enrichissements nettoyé");
     }
 
