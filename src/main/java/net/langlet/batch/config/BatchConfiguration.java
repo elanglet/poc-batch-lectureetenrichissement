@@ -77,7 +77,7 @@ public class BatchConfiguration {
                 .processor(compositeProcessor())
                 .writer(writer)
                 .listener(readEnrichissementListener)
-                .listener(processorEnrichissementListener)
+                //.listener(processorEnrichissementListener)
                 .listener(chunkEnrichissementListener)
                 .build();
     }

@@ -10,6 +10,8 @@ import org.springframework.batch.core.ChunkListener;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class ChunkEnrichissementListener implements ChunkListener {
 
@@ -23,7 +25,14 @@ public class ChunkEnrichissementListener implements ChunkListener {
 
     @Override
     public void beforeChunk(ChunkContext context) {
-        logger.debug("Début du chunk");
+        // MEILLEUR MOMENT : Juste après la lecture, avant le processing
+        logger.debug("Début du chunk - Préchargement des enrichissements");
+
+        List<String> sirets = enrichissementService.getSiretsLus().get();
+        if (!sirets.isEmpty()) {
+            logger.info("Préchargement pour {} sirets avant processing", sirets.size());
+            enrichissementService.prechargerEnrichissements();
+        }
     }
 
     @Override
