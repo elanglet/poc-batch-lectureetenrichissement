@@ -1,3 +1,5 @@
+// src/main/java/net/langlet/batch/BatchLectureEtEnrichissementApplication.java
+
 package net.langlet.batch;
 
 import org.springframework.boot.SpringApplication;

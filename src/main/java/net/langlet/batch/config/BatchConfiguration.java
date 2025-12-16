@@ -1,3 +1,5 @@
+// src/main/java/net/langlet/batch/config/BatchConfiguration.java
+
 package net.langlet.batch.config;
 
 import net.langlet.batch.listener.ChunkEnrichissementListener;
@@ -72,7 +74,6 @@ public class BatchConfiguration {
         return new StepBuilder("lectureEtEnrichissementStep", jobRepository)
                 .<Societe, SocieteComplete>chunk(chunkSize, transactionManager)
                 .reader(reader)
-                .processor(enrichissementProcessor)
                 .processor(compositeProcessor())
                 .writer(writer)
                 .listener(readEnrichissementListener)

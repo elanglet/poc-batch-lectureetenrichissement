@@ -1,3 +1,5 @@
+// src/main/java/net/langlet/batch/service/EnrichissementService.java
+
 package net.langlet.batch.service;
 
 import net.langlet.batch.model.AdresseSociete;
@@ -109,7 +111,8 @@ public class EnrichissementService {
      */
     public void viderCache() {
         chunkCache.remove();
-        siretsLus.get().clear();
+        siretsLus.remove();  // ← Libère complètement le ThreadLocal
+        nombreDeSirets.remove();  // ← Libère complètement le ThreadLocal
         logger.debug("Cache des enrichissements nettoyé");
     }
 

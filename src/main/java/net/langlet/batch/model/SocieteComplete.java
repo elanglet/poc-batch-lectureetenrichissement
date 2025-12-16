@@ -1,3 +1,5 @@
+// src/main/java/net/langlet/batch/model/SocieteComplete.java
+
 package net.langlet.batch.model;
 
 public class SocieteComplete {

@@ -1,3 +1,5 @@
+// src/main/java/net/langlet/batch/config/RestTemplateConfiguration.java
+
 package net.langlet.batch.config;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
