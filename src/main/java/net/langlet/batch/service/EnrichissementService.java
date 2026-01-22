@@ -1,5 +1,3 @@
-// src/main/java/net/langlet/batch/service/EnrichissementService.java
-
 package net.langlet.batch.service;
 
 import net.langlet.batch.model.AdresseSociete;

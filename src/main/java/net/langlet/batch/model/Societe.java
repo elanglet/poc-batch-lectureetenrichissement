@@ -1,5 +1,3 @@
-// src/main/java/net/langlet/batch/model/Societe.java
-
 package net.langlet.batch.model;
 
 public class Societe {

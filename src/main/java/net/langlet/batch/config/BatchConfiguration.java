@@ -1,5 +1,3 @@
-// src/main/java/net/langlet/batch/config/BatchConfiguration.java
-
 package net.langlet.batch.config;
 
 import net.langlet.batch.listener.ChunkEnrichissementListener;

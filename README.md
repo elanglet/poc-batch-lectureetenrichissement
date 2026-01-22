@@ -15,3 +15,21 @@ Il est nécessaire de respecter les responsabilités applicatives des composants
 ### Solution
 
 Utiliser les différents écouteurs du cycle de vie (listeners) Spring Batch pour orienter l'exécution du flux en ce sens.
+
+### Description du fonctionnement
+
+#### 1 - Lecture : 
+Le Reader lit 10 "Société" et le ReadListener accumule les numéros de Sirets.
+
+#### 2 - Processing :
+
+Le ProcessorEnrichissementListener détecte que le cache est vide et déclenche l'appel API.
+L'API retourne les enrichissements qui sont mis en cache puis chaque item est enrichi via le cache.
+
+#### 3 - Écriture : 
+
+Les 10 "SocieteComplete" sont écrits.
+
+#### 4 - Nettoyage : 
+
+Le ChunkEnrichissementListener nettoie le cache

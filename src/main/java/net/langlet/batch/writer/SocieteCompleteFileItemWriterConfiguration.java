@@ -1,5 +1,3 @@
-// src/main/java/net/langlet/batch/writer/SocieteCompleteFileItemWriterConfiguration.java
-
 package net.langlet.batch.writer;
 
 import net.langlet.batch.model.SocieteComplete;

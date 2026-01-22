@@ -1,5 +1,3 @@
-// src/main/java/net/langlet/batch/processor/EnrichissementProcessor.java
-
 package net.langlet.batch.processor;
 
 import net.langlet.batch.model.AdresseSociete;

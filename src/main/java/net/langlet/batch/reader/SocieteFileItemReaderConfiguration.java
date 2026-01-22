@@ -1,5 +1,3 @@
-// src/main/java/net/langlet/batch/reader/SocieteFileItemReaderConfiguration.java
-
 package net.langlet.batch.reader;
 
 import net.langlet.batch.model.Societe;

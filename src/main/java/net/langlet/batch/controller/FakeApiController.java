@@ -16,8 +16,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
- * Controller Mock pour simuler l'API d'enrichissement
- * À SUPPRIMER en production - c'est uniquement pour tester l'exemple
+ * Contrôleur pour simuler l'API d'enrichissement.
  */
 @RestController
 @RequestMapping("/api")
