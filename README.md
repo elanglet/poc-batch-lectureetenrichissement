@@ -32,4 +32,11 @@ Les 10 "SocieteComplete" sont écrits.
 
 #### 4 - Nettoyage : 
 
-Le ChunkEnrichissementListener nettoie le cache
+Le ChunkEnrichissementListener nettoie le cache.
+
+### Exécution
+
+Il s'agit d'un projet Spring Boot qui peut être lancé grace au plugin Maven pour Spring Boot : mvn spring-boot:run
+
+Le fichier CSV d'entrée contient 53 sociétés fictives, la taille du chunk est de 10, le fichier de sortie doit contenir les 53 sociétés complètes en fin d'exécution.
+Les traces dans la console permettent d'illustrer le séquencement des actions faites par les différents objets du batch.
